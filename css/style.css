@@ -92,11 +92,6 @@ body {
   overflow-x: hidden;
 }
 
-.mainpage {
-  height: 100vh;
-  width: 100vw;
-}
-
 .header {
   z-index: 100;
   top: 0px;
@@ -180,10 +175,10 @@ body {
   height: 2px;
   width: 100%;
   background: #c8a35f;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-transform: translateX(-101%);
+          transform: translateX(-101%);
 }
 
 .header__nav > ul > li:hover {
@@ -245,6 +240,8 @@ body {
 
 .mainpage {
   position: relative;
+  height: 100vh;
+  width: 100vw;
 }
 
 .mainpage__body {
@@ -279,19 +276,35 @@ body {
 
 .mainpage--arrow {
   position: absolute;
-  left: 50vw;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   bottom: 5vh;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
-  -webkit-transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
 .mainpage--arrow:hover {
-  -webkit-transform: scale(1.2, 1.2) translate(-50%, 0);
-          transform: scale(1.2, 1.2) translate(-50%, 0);
-  -webkit-transform-origin: top left;
-          transform-origin: top left;
+  -webkit-transform: translateX(-50%) scale(1.3);
+          transform: translateX(-50%) scale(1.3);
+}
+
+.mainpage__background {
+  position: absolute;
+  top: 0;
+  left: -10%;
+  bottom: 0;
+  right: 0;
+  height: 100vh;
+  width: 110vw;
+  background: url("../img/02_Main/01-main-image.jpg") center no-repeat;
+  background-size: cover;
+  -webkit-transition: -webkit-transform;
+  transition: -webkit-transform;
+  transition: transform;
+  transition: transform, -webkit-transform;
 }
 
 .section1 {
