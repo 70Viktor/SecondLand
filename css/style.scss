@@ -203,8 +203,8 @@ body{
 	}
 
 //================================================================
-
 .section1 {
+
 	position: relative;
 	display: flex;
 	align-items: center;
@@ -235,6 +235,9 @@ body{
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+		transform: translate(-100%, 0);
+		opacity: 0;
+		transition: 0.8s;
 	}
 
 	&__body--title {
@@ -270,10 +273,13 @@ body{
 	}
 
 	&__exapmle {
-		z-index: 2;
-		flex: 0 0 50%;
+		z-index: 1;
+		flex: 1 0 50%;
 		display: flex;
 		justify-content: space-between;
+		transform: translate(+100%, 0);
+		opacity: 0;
+		transition: 0.8s;
 
 		&_arrows {
 			flex: 1 0 auto;
@@ -318,6 +324,16 @@ body{
 }
 
 
+.section1__body._active,
+.section1__exapmle._active,
+.section2__title._active,
+.table._active,
+.section3__body._active,
+.table2._active{
+	transform: translate(0);
+	opacity: 1;
+}
+
 //===============================================================
 
 
@@ -327,7 +343,11 @@ body{
 	&__row {
 		padding-top: 20vh;
 	}
-
+	&__title{
+		transform: translate(-100%, 0);
+		opacity: 0;
+		transition: 0.8s;
+	}
 	&__title>p{
 		margin-bottom: 60px;
 		font-weight: bold;
@@ -345,13 +365,16 @@ body{
 	}
 
 	&__table {
+
 		display: flex;
 		flex-wrap: wrap;
 	}
 }
 
 .table {
-
+	transform: translate(100%, 0);
+	opacity: 0;
+	transition: 0.8s;
 
 	&__item {
 		flex: 0 1 25%;
@@ -455,6 +478,9 @@ body{
 		flex-direction: column;
 		//justify-content: space-between;
 		padding-right: 60px;
+		transform: translate(-100%, 0);
+		opacity: 0;
+		transition: 0.8s;
 	}
 
 	&__body--title {
@@ -487,6 +513,9 @@ body{
 	}
 }
 .table2 {
+	transform: translate(100%, 0);
+	opacity: 0;
+	transition: 0.8s;
 
 	
 	&__item {	
