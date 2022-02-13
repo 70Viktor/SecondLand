@@ -101,11 +101,16 @@ body{
 		}
 
 	}
+	.subnav.visible {
+		transform: translateY(100px);
+		transition: 0.6s;
+	}
 		.subnav {
-			position: absolute;
-			
+			position: fixed;
+			transform: translateY(0);
+			transition: 0.6s;
 			z-index: 99;
-			top: 100px;
+			top: 0;
 			left: 0;
 			height: 45px;
 			width: 100vw;
@@ -395,6 +400,7 @@ body{
 			background: url('../img/03_Section/02-icon-light.png') center no-repeat;
 			width: 70px;
 			height: 70px;
+			transition: 0.3s;
 		}
 
 		&-label {
@@ -410,6 +416,7 @@ body{
 		}
 
 		&:hover{
+			transition: 0.3s;
 			background:#c8a36f;
 			z-index: 2;
 			.table__item-icon {

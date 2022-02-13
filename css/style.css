@@ -192,10 +192,21 @@ body {
           transform: translateX(0);
 }
 
+.subnav.visible {
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
 .subnav {
-  position: absolute;
+  position: fixed;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
   z-index: 99;
-  top: 100px;
+  top: 0;
   left: 0;
   height: 45px;
   width: 100vw;
@@ -558,6 +569,8 @@ body {
   background: url("../img/03_Section/02-icon-light.png") center no-repeat;
   width: 70px;
   height: 70px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .table__item-label {
@@ -573,6 +586,8 @@ body {
 }
 
 .table__item:hover {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   background: #c8a36f;
   z-index: 2;
 }

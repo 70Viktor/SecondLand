@@ -1,4 +1,6 @@
 // parallax
+document.addEventListener('mousemove', parallax)
+
 function parallax(event) {
 	this
 	.querySelector('.mainpage__background')
@@ -6,26 +8,27 @@ function parallax(event) {
 	.transform = `translateX(${event.clientX/50}px)`
 }
 
-document.addEventListener('mousemove', parallax)
-// scroll botton
-let anchor = document.getElementById('scroll')
 
-anchor.addEventListener("click",function (event) {
+
+
+// scroll botton
+document.getElementById('scroll').addEventListener("click", scrollBtn)
+
+function scrollBtn (event) {
 	document.getElementById('section1').scrollIntoView({
 		behavior: "smooth",
 		block: "start"
 	})
-})
+}
 
 // animation
 const animItems = document.querySelectorAll('._anim-items');
 let animOnScroll = () => {
 	animItems.forEach(el => {
 		let height = el.getBoundingClientRect().height
-	if (el.getBoundingClientRect().top <= window.innerHeight*3/4
-	&&(el.getBoundingClientRect().bottom > window.innerHeight/4)) {
+	if (el.getBoundingClientRect().top <= window.innerHeight*3/4) {
 		el.classList.add('_active')
-	} else {
+	} else if (el.getBoundingClientRect().top > window.innerHeight) {
 		el.classList.remove('_active')
 	}
 	})
@@ -34,4 +37,21 @@ let animOnScroll = () => {
 	animOnScroll()
 if (animItems.length > 0) {
 	window.addEventListener('scroll', animOnScroll)
+	}
+
+
+	//subnav
+
+	let subnav = document.querySelector('.subnav')
+	window.addEventListener('scroll', scrollNav)
+	let currScroll = 0
+	function scrollNav() {
+		if (window.scrollY > currScroll && window.scrollY > window.innerHeight - 145) {
+			
+			subnav.classList.remove('visible')
+		} else {
+			subnav.classList.add('visible')
+		}
+		currScroll = window.scrollY
+		console.log(window.scrollY)
 	}
